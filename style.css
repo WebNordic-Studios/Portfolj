@@ -992,41 +992,40 @@ a:hover {
   background-size: cover;
   background-position: center;
   transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 1.75rem);
+}
+
+.portfolio__thumb-img {
+  width: min(92%, 240px);
+  height: auto;
+  max-height: 78%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 10px 28px rgba(15, 23, 42, 0.18));
+  transition: filter 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio__thumb--2 .portfolio__thumb-img,
+.portfolio__thumb--3 .portfolio__thumb-img {
+  filter: drop-shadow(0 10px 32px rgba(0, 0, 0, 0.45));
+}
+
+.portfolio__link:hover .portfolio__thumb-img {
+  filter: drop-shadow(0 14px 36px rgba(15, 23, 42, 0.22));
+}
+
+.portfolio__link:hover .portfolio__thumb--2 .portfolio__thumb-img,
+.portfolio__link:hover .portfolio__thumb--3 .portfolio__thumb-img {
+  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.55));
 }
 
 .portfolio__link:hover .portfolio__thumb {
   transform: scale(1.05);
-}
-
-/* Logotyp ovanför projektnamn (färgrutan är oförändrad ovanför) */
-.portfolio__brand {
-  margin: 0 -1.25rem 1rem;
-  padding: 0.875rem 1.25rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 5rem;
-  background: var(--bg-muted);
-  border-bottom: 1px solid var(--border);
-}
-
-.portfolio__brand-img {
-  width: min(100%, 240px);
-  height: auto;
-  max-height: 3.25rem;
-  object-fit: contain;
-  object-position: center;
-  filter: drop-shadow(0 4px 14px rgba(15, 23, 42, 0.08));
-  transition: filter 0.35s ease, transform 0.35s ease;
-}
-
-.portfolio__link:hover .portfolio__brand-img {
-  filter: drop-shadow(0 6px 18px rgba(15, 23, 42, 0.12));
-  transform: translateY(-1px);
-}
-
-[data-theme="dark"] .portfolio__link:hover .portfolio__brand-img {
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.35));
 }
 
 .portfolio__thumb--1 {
@@ -1051,7 +1050,7 @@ a:hover {
 }
 
 .portfolio__meta {
-  padding: 0 1.25rem 1.1rem;
+  padding: 1.1rem 1.25rem;
 }
 
 .portfolio__tag {
@@ -1063,7 +1062,7 @@ a:hover {
 }
 
 .portfolio__name {
-  margin: 0 0 0.25rem;
+  margin: 0.35rem 0 0.25rem;
   font-size: 1.05rem;
 }
 
