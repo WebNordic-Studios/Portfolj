@@ -1040,6 +1040,19 @@ a:hover {
   color: var(--text-muted);
 }
 
+.portfolio__demo {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.portfolio__link:hover .portfolio__demo {
+  color: var(--accent-hover);
+}
+
 /* --- Process --- */
 .process {
   list-style: none;
