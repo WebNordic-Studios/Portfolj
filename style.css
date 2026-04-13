@@ -638,16 +638,10 @@ a:hover {
 /* --- Om oss --- */
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 1.5rem;
   color: var(--text-muted);
-}
-
-@media (max-width: 700px) {
-  .about__grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* --- Kort --- */
