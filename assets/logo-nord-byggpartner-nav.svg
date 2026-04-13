@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none" aria-hidden="true">
+  <g transform="translate(4 8)">
+    <rect x="4" y="8" width="14" height="40" rx="2" fill="#d97706"/>
+    <polygon points="18,8 32,8 72,48 58,48" fill="#d97706"/>
+    <rect x="58" y="8" width="14" height="40" rx="2" fill="#d97706"/>
+  </g>
+  <text x="96" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#1a1d21" letter-spacing="0.1em">NORD</text>
+  <text x="96" y="56" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#b45309" letter-spacing="0.22em">BYGGPARTNER</text>
+</svg>
