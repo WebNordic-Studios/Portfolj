@@ -966,6 +966,7 @@ a:hover {
 }
 
 .portfolio__item {
+  position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -978,56 +979,81 @@ a:hover {
   display: none;
 }
 
-.portfolio__link {
-  display: block;
-  color: inherit;
-}
-
-.portfolio__link:hover {
-  color: inherit;
-}
-
-.portfolio__thumb {
-  aspect-ratio: 4 / 3;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.5s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(1rem, 4vw, 1.75rem);
-}
-
-.portfolio__thumb-img {
-  width: min(92%, 240px);
-  height: auto;
-  max-height: 78%;
-  object-fit: contain;
-  object-position: center;
-  filter: drop-shadow(0 10px 28px rgba(15, 23, 42, 0.18));
-  transition: filter 0.35s ease;
+/* Live förhandsvisning av demosida (suddig) */
+.portfolio__preview {
   position: relative;
-  z-index: 1;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-muted);
+  overflow: hidden;
 }
 
-.portfolio__thumb--2 .portfolio__thumb-img,
-.portfolio__thumb--3 .portfolio__thumb-img {
-  filter: drop-shadow(0 10px 32px rgba(0, 0, 0, 0.45));
+.portfolio__preview-inner {
+  position: absolute;
+  inset: -6% -8%;
+  overflow: hidden;
+  filter: blur(5px);
+  transform: scale(1.04);
+  transform-origin: center top;
+  transition: transform 0.5s ease, filter 0.35s ease;
 }
 
-.portfolio__link:hover .portfolio__thumb-img {
-  filter: drop-shadow(0 14px 36px rgba(15, 23, 42, 0.22));
+.portfolio__iframe {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(1120px, 220%);
+  height: 1400px;
+  margin-left: 0;
+  border: 0;
+  pointer-events: none;
+  transform: translateX(-50%) scale(0.38);
+  transform-origin: top center;
 }
 
-.portfolio__link:hover .portfolio__thumb--2 .portfolio__thumb-img,
-.portfolio__link:hover .portfolio__thumb--3 .portfolio__thumb-img {
-  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.55));
+.portfolio__preview-blur {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.35s ease;
 }
 
-.portfolio__link:hover .portfolio__thumb {
-  transform: scale(1.05);
+[data-theme="dark"] .portfolio__preview-blur {
+  background: rgba(15, 23, 42, 0.35);
 }
 
+.portfolio__item:hover .portfolio__preview-inner {
+  transform: scale(1.08);
+  filter: blur(4px);
+}
+
+.portfolio__item:hover .portfolio__preview-blur {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .portfolio__item:hover .portfolio__preview-blur {
+  background: rgba(15, 23, 42, 0.28);
+}
+
+.portfolio__card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.portfolio__card-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  z-index: 5;
+}
+
+/* Reserv om iframe inte laddar */
 .portfolio__thumb--1 {
   background-image: radial-gradient(ellipse 120% 80% at 20% 30%, #fffdf9 0%, transparent 55%),
     linear-gradient(135deg, #f0e4d4 0%, #c4a574 42%, #3d5c4a 100%);
@@ -1050,6 +1076,8 @@ a:hover {
 }
 
 .portfolio__meta {
+  position: relative;
+  z-index: 1;
   padding: 1.1rem 1.25rem;
 }
 
@@ -1081,7 +1109,7 @@ a:hover {
   letter-spacing: 0.02em;
 }
 
-.portfolio__link:hover .portfolio__demo {
+.portfolio__item:hover .portfolio__demo {
   color: var(--accent-hover);
 }
 
