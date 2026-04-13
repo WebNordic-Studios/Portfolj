@@ -642,6 +642,12 @@ a:hover {
   gap: 1.5rem;
   margin-top: 1.5rem;
   color: var(--text-muted);
+  justify-items: center;
+  text-align: center;
+}
+
+.about__grid p {
+  max-width: 70ch;
 }
 
 /* --- Kort --- */
