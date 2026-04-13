@@ -54,13 +54,19 @@
       margin-bottom: 40px;
     }
     .logo {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--espresso);
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
+      color: var(--espresso);
     }
-    .logo span { color: var(--leaf); }
+    .logo__img {
+      height: 46px;
+      width: auto;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .logo__img { height: 38px; }
+    }
     .nav-links {
       display: flex;
       gap: 28px;
@@ -231,7 +237,9 @@
   <header class="site">
     <div class="wrap">
       <nav class="nav" aria-label="Primär navigation">
-        <a class="logo" href="#">Solsidan <span>Kaffe</span></a>
+        <a class="logo" href="#" aria-label="Solsidan Kaffe — startsida">
+          <img class="logo__img" src="../assets/logo-solsidan-kaffe.svg" width="320" height="200" alt="" decoding="async" />
+        </a>
         <ul class="nav-links">
           <li><a href="#meny">Meny</a></li>
           <li><a href="#oppettider">Öppettider</a></li>

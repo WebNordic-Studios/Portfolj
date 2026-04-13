@@ -68,13 +68,18 @@
       padding: 18px 0;
     }
     .logo {
-      font-weight: 700;
-      font-size: 1.125rem;
-      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
-      letter-spacing: -0.02em;
     }
-    .logo span { color: var(--accent-dark); }
+    .logo__img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .logo__img { height: 34px; }
+    }
     .nav-links {
       display: flex;
       flex-wrap: wrap;
@@ -246,7 +251,9 @@
   <header class="main">
     <div class="wrap">
       <nav class="nav" aria-label="Huvudnavigation">
-        <a class="logo" href="#">Johanssons <span>Rörmokeri</span></a>
+        <a class="logo" href="#" aria-label="Johanssons Rörmokeri — startsida">
+          <img class="logo__img" src="../assets/logo-johanssons-rormokeri-nav.svg" width="300" height="56" alt="" decoding="async" />
+        </a>
         <ul class="nav-links">
           <li><a href="#tjanster">Tjänster</a></li>
           <li><a href="#om">Om oss</a></li>

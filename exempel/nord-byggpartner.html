@@ -55,15 +55,18 @@
       padding: 16px 0;
     }
     .logo {
-      font-family: var(--font-head);
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--white);
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
     }
-    .logo span { color: var(--amber); }
+    .logo__img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .logo__img { height: 36px; }
+    }
     .nav-links {
       display: flex;
       flex-wrap: wrap;
@@ -271,7 +274,9 @@
   <header class="site">
     <div class="wrap">
       <nav class="nav" aria-label="Navigation">
-        <a class="logo" href="#">Nord <span>Byggpartner</span></a>
+        <a class="logo" href="#" aria-label="Nord Byggpartner — startsida">
+          <img class="logo__img" src="../assets/logo-nord-byggpartner.svg" width="380" height="200" alt="" decoding="async" />
+        </a>
         <ul class="nav-links">
           <li><a href="#projekt">Projekt</a></li>
           <li><a href="#om">Om oss</a></li>

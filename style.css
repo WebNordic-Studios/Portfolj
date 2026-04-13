@@ -992,6 +992,26 @@ a:hover {
   background-size: cover;
   background-position: center;
   transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 1.75rem);
+}
+
+.portfolio__thumb-img {
+  width: min(92%, 240px);
+  height: auto;
+  max-height: 78%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 10px 28px rgba(15, 23, 42, 0.18));
+  transition: filter 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio__link:hover .portfolio__thumb-img {
+  filter: drop-shadow(0 14px 36px rgba(15, 23, 42, 0.24));
 }
 
 .portfolio__link:hover .portfolio__thumb {
@@ -999,13 +1019,15 @@ a:hover {
 }
 
 .portfolio__thumb--1 {
-  background-image: linear-gradient(135deg, #0d9488 0%, #134e4a 100%);
+  background-image: radial-gradient(ellipse 120% 80% at 20% 30%, #fffdf9 0%, transparent 55%),
+    linear-gradient(135deg, #f0e4d4 0%, #c4a574 42%, #3d5c4a 100%);
 }
 .portfolio__thumb--2 {
-  background-image: linear-gradient(135deg, #78716c 0%, #44403c 100%);
+  background-image: radial-gradient(circle at 75% 25%, rgba(14, 165, 233, 0.2) 0%, transparent 45%),
+    linear-gradient(135deg, #0c1e3c 0%, #152a4f 55%, #0a1628 100%);
 }
 .portfolio__thumb--3 {
-  background-image: linear-gradient(135deg, #6366f1 0%, #312e81 100%);
+  background-image: linear-gradient(160deg, #2d3239 0%, #1a1d21 40%, #3d2914 100%);
 }
 .portfolio__thumb--4 {
   background-image: linear-gradient(135deg, #ea580c 0%, #7c2d12 100%);
