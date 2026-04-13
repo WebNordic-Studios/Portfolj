@@ -1,6 +1,6 @@
 /**
  * WebNordic Studios — interaktivitet
- * Laddare, tema, navigation, scroll-reveal, cases, portfolio, slider, formulär
+ * Laddare, tema, navigation, scroll-reveal, slider, formulär
  */
 
 (function () {
@@ -157,59 +157,7 @@
     });
   }
 
-  /* ----- 6) Case-flikar ----- */
-  function initCases() {
-    var tabs = doc.querySelectorAll(".cases__tab");
-    var panels = doc.querySelectorAll("[data-case-panel]");
-    if (!tabs.length || !panels.length) return;
-
-    function activate(index) {
-      tabs.forEach(function (tab, i) {
-        var on = String(i) === String(index);
-        tab.classList.toggle("is-active", on);
-        tab.setAttribute("aria-selected", on ? "true" : "false");
-      });
-      panels.forEach(function (panel) {
-        var on = panel.getAttribute("data-case-panel") === String(index);
-        panel.classList.toggle("is-active", on);
-        panel.hidden = !on;
-      });
-    }
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        var idx = tab.getAttribute("data-case");
-        if (idx !== null) activate(idx);
-      });
-    });
-  }
-
-  /* ----- 7) Portfolio-filter ----- */
-  function initPortfolioFilter() {
-    var buttons = doc.querySelectorAll(".filter-btn");
-    var items = doc.querySelectorAll(".portfolio__item[data-category]");
-    if (!buttons.length || !items.length) return;
-
-    function setFilter(cat) {
-      buttons.forEach(function (b) {
-        b.classList.toggle("is-active", b.getAttribute("data-filter") === cat);
-      });
-      items.forEach(function (item) {
-        var c = item.getAttribute("data-category");
-        var show = cat === "all" || c === cat;
-        item.classList.toggle("is-hidden", !show);
-      });
-    }
-
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var f = btn.getAttribute("data-filter") || "all";
-        setFilter(f);
-      });
-    });
-  }
-
-  /* ----- 8) Testimonial-slider ----- */
+  /* ----- 6) Testimonial-slider ----- */
   function initTestimonials() {
     var track = doc.getElementById("testimonial-track");
     var prev = doc.getElementById("testimonial-prev");
@@ -280,7 +228,7 @@
     });
   }
 
-  /* ----- 9) Formulärvalidering + mailto ----- */
+  /* ----- 7) Formulärvalidering + mailto ----- */
   function isValidEmail(value) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(value).trim());
@@ -358,7 +306,7 @@
     });
   }
 
-  /* ----- 10) År i footer ----- */
+  /* ----- 8) År i footer ----- */
   function initYear() {
     var y = doc.getElementById("year");
     if (y) y.textContent = String(new Date().getFullYear());
@@ -370,8 +318,6 @@
     initNav();
     initSmoothScroll();
     initReveal();
-    initCases();
-    initPortfolioFilter();
     initTestimonials();
     initContactForm();
     initYear();
