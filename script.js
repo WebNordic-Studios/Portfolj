@@ -1,6 +1,6 @@
 /**
- * WebNordic Studios — interaktivitet
- * Laddare, tema, navigation, scroll-reveal, slider, formulär
+ * WebNordic Studios — UI behaviour
+ * Loader, theme, navigation, scroll reveal, testimonials, contact form
  */
 
 (function () {
@@ -9,7 +9,7 @@
   var doc = document;
   var root = doc.documentElement;
 
-  /* ----- Hjälp: vänta på DOM ----- */
+  /* ----- Wait for DOM ----- */
   function onReady(fn) {
     if (doc.readyState === "loading") {
       doc.addEventListener("DOMContentLoaded", fn);
@@ -18,7 +18,7 @@
     }
   }
 
-  /* ----- 1) Sidladdare ----- */
+  /* ----- 1) Page loader ----- */
   function initLoader() {
     var loader = doc.getElementById("page-loader");
     if (!loader) return;
@@ -77,7 +77,7 @@
     });
   }
 
-  /* ----- 3) Mobilmeny ----- */
+  /* ----- 3) Mobile nav ----- */
   function initNav() {
     var toggle = doc.querySelector(".nav__toggle");
     var menu = doc.getElementById("nav-menu");
@@ -96,7 +96,7 @@
     });
   }
 
-  /* ----- 4) Smooth scroll med offset för sticky header ----- */
+  /* ----- 4) Smooth scroll with offset for sticky header ----- */
   var HEADER_OFFSET = 80;
 
   function scrollToHash(hash) {
@@ -157,7 +157,7 @@
     });
   }
 
-  /* ----- 6) Testimonial-slider ----- */
+  /* ----- 6) Testimonial slider ----- */
   function initTestimonials() {
     var track = doc.getElementById("testimonial-track");
     var prev = doc.getElementById("testimonial-prev");
@@ -186,7 +186,7 @@
           var dot = doc.createElement("button");
           dot.type = "button";
           dot.className = "testimonials__dot" + (j === 0 ? " is-active" : "");
-          dot.setAttribute("aria-label", "Citat " + (j + 1));
+          dot.setAttribute("aria-label", "Testimonial " + (j + 1));
           dot.setAttribute("role", "tab");
           dot.setAttribute("aria-selected", j === 0 ? "true" : "false");
           dot.addEventListener("click", function () {
@@ -228,7 +228,7 @@
     });
   }
 
-  /* ----- 7) Formulärvalidering + mailto ----- */
+  /* ----- 7) Form validation + mailto ----- */
   function isValidEmail(value) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(value).trim());
@@ -270,26 +270,26 @@
       var ok = true;
 
       if (!name) {
-        setError("name-error", "Ange ditt namn.");
+        setError("name-error", "Please enter your name.");
         ok = false;
       }
       if (!email) {
-        setError("email-error", "Ange din e-postadress.");
+        setError("email-error", "Please enter your email address.");
         ok = false;
       } else if (!isValidEmail(email)) {
-        setError("email-error", "Ange en giltig e-postadress.");
+        setError("email-error", "Please enter a valid email address.");
         ok = false;
       }
       if (!message) {
-        setError("message-error", "Skriv ett kort meddelande.");
+        setError("message-error", "Please write a short message.");
         ok = false;
       }
 
       if (!ok) return;
 
-      var subject = encodeURIComponent("Förfrågan från " + name + " — WebNordic Studios");
+      var subject = encodeURIComponent("Enquiry from " + name + " — WebNordic Studios");
       var body = encodeURIComponent(
-        "Namn: " + name + "\nE-post: " + email + "\n\nMeddelande:\n" + message
+        "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
       );
       var mailto = "mailto:webnordicstudios@gmail.com?subject=" + subject + "&body=" + body;
 
@@ -300,13 +300,13 @@
       if (success) {
         success.hidden = false;
         success.textContent =
-          "Tack! Din e-postklient öppnas med meddelandet. Vi återkommer inom 24 timmar.";
+          "Thank you! Your email app should open with the message. We will reply within 24 hours.";
       }
       form.reset();
     });
   }
 
-  /* ----- 8) År i footer ----- */
+  /* ----- 8) Year in footer ----- */
   function initYear() {
     var y = doc.getElementById("year");
     if (y) y.textContent = String(new Date().getFullYear());
