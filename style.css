@@ -979,63 +979,41 @@ a:hover {
   display: none;
 }
 
-/* Live förhandsvisning av demosida (suddig) */
+/* Minimal thumbnails — aligned with hero mock / site palette */
 .portfolio__preview {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: var(--bg-muted);
   overflow: hidden;
 }
 
-.portfolio__preview-inner {
-  position: absolute;
-  inset: -6% -8%;
-  overflow: hidden;
-  filter: blur(5px);
-  transform: scale(1.04);
-  transform-origin: center top;
-  transition: transform 0.5s ease, filter 0.35s ease;
-}
-
-.portfolio__iframe {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: min(1120px, 220%);
-  height: 1400px;
-  margin-left: 0;
-  border: 0;
-  pointer-events: none;
-  transform: translateX(-50%) scale(0.38);
-  transform-origin: top center;
-}
-
-.portfolio__preview-blur {
+.portfolio__thumb {
   position: absolute;
   inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: background 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12%;
+  background: linear-gradient(165deg, var(--bg-muted) 0%, var(--surface) 55%, var(--bg-muted) 100%);
 }
 
-[data-theme="dark"] .portfolio__preview-blur {
-  background: rgba(15, 23, 42, 0.35);
+.portfolio__thumb-art {
+  width: min(76%, 200px);
+  height: auto;
+  flex-shrink: 0;
+  color: var(--accent);
+  opacity: 0.42;
+  transition: opacity var(--transition), transform var(--transition);
 }
 
-.portfolio__item:hover .portfolio__preview-inner {
-  transform: scale(1.08);
-  filter: blur(4px);
+.portfolio__item:hover .portfolio__thumb-art {
+  opacity: 0.62;
+  transform: translateY(-2px) scale(1.03);
 }
 
-.portfolio__item:hover .portfolio__preview-blur {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme="dark"] .portfolio__item:hover .portfolio__preview-blur {
-  background: rgba(15, 23, 42, 0.28);
+@media (prefers-reduced-motion: reduce) {
+  .portfolio__item:hover .portfolio__thumb-art {
+    transform: none;
+  }
 }
 
 .portfolio__card-link {
@@ -1053,26 +1031,16 @@ a:hover {
   z-index: 5;
 }
 
-/* Reserv om iframe inte laddar */
-.portfolio__thumb--1 {
-  background-image: radial-gradient(ellipse 120% 80% at 20% 30%, #fffdf9 0%, transparent 55%),
-    linear-gradient(135deg, #f0e4d4 0%, #c4a574 42%, #3d5c4a 100%);
+.portfolio__thumb--cafe .portfolio__thumb-art {
+  opacity: 0.44;
 }
-.portfolio__thumb--2 {
-  background-image: radial-gradient(circle at 75% 25%, rgba(14, 165, 233, 0.2) 0%, transparent 45%),
-    linear-gradient(135deg, #0c1e3c 0%, #152a4f 55%, #0a1628 100%);
+
+.portfolio__thumb--plumb .portfolio__thumb-art {
+  opacity: 0.4;
 }
-.portfolio__thumb--3 {
-  background-image: linear-gradient(160deg, #2d3239 0%, #1a1d21 40%, #3d2914 100%);
-}
-.portfolio__thumb--4 {
-  background-image: linear-gradient(135deg, #ea580c 0%, #7c2d12 100%);
-}
-.portfolio__thumb--5 {
-  background-image: linear-gradient(135deg, #64748b 0%, #1e293b 100%);
-}
-.portfolio__thumb--6 {
-  background-image: linear-gradient(135deg, #0891b2 0%, #164e63 100%);
+
+.portfolio__thumb--build .portfolio__thumb-art {
+  opacity: 0.38;
 }
 
 .portfolio__meta {
