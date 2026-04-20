@@ -38,13 +38,10 @@ export function SiteHeader() {
           <ThemeToggle />
           <Link
             href="/#contact"
-            className="hidden md:inline-flex h-10 items-center rounded-full px-4 text-sm font-medium text-white transition hover:opacity-90"
-            style={{
-              background:
-                "linear-gradient(90deg, rgb(var(--accent-a)), rgb(var(--accent-b)))",
-            }}
+            className="hidden md:inline-flex h-10 items-center rounded-full border px-4 text-sm font-medium transition hover:bg-black/5 dark:hover:bg-white/5"
+            style={{ borderColor: "rgb(var(--line))" }}
           >
-            Start a project
+            Let’s talk
           </Link>
         </div>
       </div>

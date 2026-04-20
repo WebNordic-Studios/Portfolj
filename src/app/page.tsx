@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { CursorGlow } from "@/components/cursor-glow";
-import { HeroVisual } from "@/components/hero-visual";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { WorkCard } from "@/components/work-card";
+import { FeaturedWorkRow } from "@/components/featured-work-row";
+import { HeroScreens } from "@/components/hero-screens";
 import { WORK } from "@/lib/work";
 
 export default function Home() {
@@ -31,15 +31,15 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-[rgb(var(--muted))] md:text-lg">
-                  High-performing websites for modern brands. Visual-first work,
-                  minimal copy, and measurable improvements.
+                  High-performing websites for modern brands — visual-first work,
+                  minimal copy, real results.
                 </p>
               </Reveal>
 
               <Reveal delay={0.18}>
                 <div className="mt-8 flex flex-wrap items-center gap-3">
                   <Link
-                    href="/#work"
+                    href="/work"
                     className="inline-flex h-11 items-center rounded-full px-5 text-sm font-medium text-white transition hover:opacity-90"
                     style={{
                       background:
@@ -57,27 +57,21 @@ export default function Home() {
                   </Link>
                 </div>
               </Reveal>
-
-              <Reveal delay={0.24}>
-                <div className="mt-10 grid grid-cols-3 gap-4">
-                  <Stat value="AA" label="accessibility" />
-                  <Stat value="1–2w" label="typical first build" />
-                  <Stat value="∞" label="clean handover" />
-                </div>
-              </Reveal>
             </div>
 
             <Reveal delay={0.12}>
-              <HeroVisual
-                coverA={WORK[0]!.hero.cover}
-                coverB={WORK[1]!.hero.cover}
-                coverC={WORK[2]!.hero.cover}
+              <HeroScreens
+                covers={[
+                  { src: WORK[0]!.hero.cover, alt: WORK[0]!.hero.coverAlt },
+                  { src: WORK[1]!.hero.cover, alt: WORK[1]!.hero.coverAlt },
+                  { src: WORK[2]!.hero.cover, alt: WORK[2]!.hero.coverAlt },
+                ]}
               />
             </Reveal>
           </div>
         </section>
 
-        {/* FEATURED WORK */}
+        {/* FEATURED WORK (CORE) */}
         <section id="work" className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
           <div className="flex items-end justify-between gap-6">
             <div>
@@ -88,8 +82,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.06}>
                 <p className="mt-3 max-w-xl text-sm leading-6 text-[rgb(var(--muted))] md:text-base">
-                  Selected case studies. Visuals first — with the outcomes that
-                  matter.
+                  Selected case studies. Visuals first — with outcomes that matter.
                 </p>
               </Reveal>
             </div>
@@ -104,10 +97,10 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {WORK.map((w, i) => (
-              <Reveal key={w.slug} delay={0.06 + i * 0.04}>
-                <WorkCard work={w} />
+          <div className="mt-10 grid gap-6">
+            {WORK.slice(0, 3).map((w, i) => (
+              <Reveal key={w.slug} delay={0.05 + i * 0.05}>
+                <FeaturedWorkRow work={w} index={i} />
               </Reveal>
             ))}
           </div>
@@ -252,15 +245,6 @@ export default function Home() {
       </main>
 
       <SiteFooter />
-    </div>
-  );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-2xl border px-4 py-3" style={{ borderColor: "rgb(var(--line))" }}>
-      <p className="text-lg font-semibold tracking-tight">{value}</p>
-      <p className="mt-0.5 text-xs text-[rgb(var(--muted))]">{label}</p>
     </div>
   );
 }
