@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { TransitionLayout } from "@/components/TransitionLayout";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Cursor } from "@/components/Cursor";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -51,6 +52,7 @@ export default function RootLayout({
           <TransitionLayout>{children}</TransitionLayout>
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
