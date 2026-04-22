@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" fill="none" aria-hidden="true">
+  <g transform="translate(28 40)">
+    <path fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M 36 8 L 36 76 C 36 92 24 104 8 104 L 4 104"/>
+    <path fill="none" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round" d="M 42 18 L 68 18 C 86 18 98 30 98 48 C 98 66 86 78 68 78 L 42 78"/>
+    <circle cx="98" cy="48" r="7" fill="#0ea5e9"/>
+  </g>
+  <text x="124" y="82" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Johanssons</text>
+  <text x="124" y="112" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="600" fill="#94a3b8" letter-spacing="0.2em">RÖRMOKERI</text>
+</svg>

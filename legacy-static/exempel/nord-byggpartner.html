@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nord Build Partners — concept demo: projects, references, and quotes." />
+  <title>Nord Build Partners | Concept demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --charcoal: #1a1d21;
+      --slate: #2d3239;
+      --concrete: #e9ecef;
+      --sand: #f4f2ed;
+      --amber: #d97706;
+      --amber-hover: #b45309;
+      --white: #ffffff;
+      --font-head: "Oswald", system-ui, sans-serif;
+      --font-body: "Source Sans 3", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background: var(--sand);
+      line-height: 1.6;
+    }
+    .demo-bar {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 0.8125rem;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .demo-bar a { color: #fbbf24; font-weight: 600; }
+    .demo-bar a:hover { text-decoration: underline; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    header.site {
+      background: var(--charcoal);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 16px 0;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo__img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .logo__img { height: 36px; }
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: var(--font-head);
+      font-size: 0.8125rem;
+    }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-cta {
+      background: var(--amber);
+      color: var(--charcoal) !important;
+      padding: 10px 20px;
+      font-weight: 600;
+    }
+    .nav-cta:hover { background: #f59e0b; color: var(--charcoal) !important; }
+
+    .hero {
+      min-height: 72vh;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(180deg, rgba(26,29,33,0.55) 0%, rgba(26,29,33,0.92) 100%),
+        linear-gradient(135deg, #3d3d3d 0%, #1a1d21 60%);
+      color: var(--white);
+      padding: 100px 0 64px;
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-tag {
+      display: inline-block;
+      border-left: 4px solid var(--amber);
+      padding-left: 14px;
+      font-family: var(--font-head);
+      font-size: 0.8125rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 38ch;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      font-family: var(--font-head);
+      font-size: 0.9375rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn--amber {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+    .btn--amber:hover { background: #f59e0b; }
+    .btn--ghost {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.35);
+      margin-left: 12px;
+    }
+    .btn--ghost:hover { border-color: var(--amber); color: var(--amber); }
+
+    section { padding: 72px 0; }
+    section.dark {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.88);
+    }
+    .section-label {
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 16px;
+      color: inherit;
+    }
+    .section-lead {
+      max-width: 560px;
+      opacity: 0.85;
+      margin-bottom: 40px;
+      font-size: 1.0625rem;
+    }
+    section:not(.dark) .section-title { color: var(--charcoal); }
+    section:not(.dark) .section-lead { color: #4b5563; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .projects { grid-template-columns: 1fr; }
+    }
+    .project {
+      background: var(--slate);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .project-visual {
+      height: 200px;
+      background: linear-gradient(145deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
+      position: relative;
+    }
+    .project-visual::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    }
+    .project-body { padding: 22px; }
+    .project-body h3 {
+      font-family: var(--font-head);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .project-body p { font-size: 0.875rem; opacity: 0.75; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: 1fr; text-align: center; }
+    }
+    .stat strong {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      color: var(--amber);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .stat span { font-size: 0.875rem; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .cta-section {
+      background: var(--concrete);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-section .section-title { margin-bottom: 12px; }
+    .cta-section p { color: #4b5563; max-width: 480px; margin: 0 auto 28px; font-size: 1.0625rem; }
+
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.55);
+      padding: 32px 24px 40px;
+      text-align: center;
+      font-size: 0.8125rem;
+    }
+    footer a { color: var(--amber); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    Concept demo by WebNordic Studios · <a href="../index.html#portfolio">Back to portfolio</a>
+  </div>
+
+  <header class="site">
+    <div class="wrap">
+      <nav class="nav" aria-label="Navigation">
+        <a class="logo" href="#" aria-label="Nord Build Partners — home">
+          <img class="logo__img" src="../assets/logo-nord-byggpartner.svg" width="380" height="200" alt="" decoding="async" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a class="nav-cta" href="#quote">Request a quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="hero-tag">Design &amp; build · Stockholm · Mälaren region</p>
+        <h1 id="hero-title">We build to last — from first sketch to move-in day</h1>
+        <p>Housing, offices, and industrial. Coordination, safety, and clear milestones at every stage.</p>
+        <div>
+          <a class="btn btn--amber" href="#quote">Start your quote</a>
+          <a class="btn btn--ghost" href="#projects">See references</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="dark" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <p class="section-label">Selected work</p>
+        <h2 id="projects-title" class="section-title">Reference projects</h2>
+        <p class="section-lead">A sample of contracts where we owned the full delivery — schedule, subcontractors, and quality control.</p>
+        <div class="projects">
+          <article class="project">
+            <div class="project-visual" role="presentation" aria-hidden="true"></div>
+            <div class="project-body">
+              <h3>Oak Hill Housing Association</h3>
+              <p>Facade upgrade and energy optimisation, 48 homes — completed while residents stayed in place.</p>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-visual" role="presentation" aria-hidden="true"></div>
+            <div class="project-body">
+              <h3>Nordic Logistics Hub</h3>
+              <p>New build: 12,000 m² with cold docks and rooftop solar.</p>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-visual" role="presentation" aria-hidden="true"></div>
+            <div class="project-body">
+              <h3>Villa Berghem</h3>
+              <p>Turnkey single-family home — passive-house principles and locally sourced timber.</p>
+            </div>
+          </article>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>25+</strong>
+            <span>Years in the industry</span>
+          </div>
+          <div class="stat">
+            <strong>ISO</strong>
+            <span>9001 · 14001</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Construction health &amp; safety coordination</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="section-label">Partnership</p>
+        <h2 id="about-title" class="section-title">Your partner across the build</h2>
+        <p class="section-lead">We work closely with architects, clients, and local suppliers. Clear contracts, open reporting, and a sharp focus on site safety.</p>
+      </div>
+    </section>
+
+    <section class="cta-section" id="quote" aria-labelledby="quote-title">
+      <h2 id="quote-title" class="section-title">Ready to talk about your project?</h2>
+      <p>Send drawings or a short brief — we will come back with a timeline and an indicative budget.</p>
+      <a class="btn btn--amber" href="../index.html#contact">Go to contact form (demo)</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Nord Build Partners Ltd · Box 1001, 111 11 Stockholm · <a href="mailto:projekt@demo.se">projekt@demo.se</a></p>
+    <p style="margin-top:10px;">Design demo — fictional company for showcase purposes.</p>
+  </footer>
+</body>
+</html>
