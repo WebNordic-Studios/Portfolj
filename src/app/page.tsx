@@ -1,65 +1,300 @@
-import Image from "next/image";
+import Link from "next/link";
+import { projects } from "@/lib/projects";
+import { ProjectCard } from "@/components/ProjectCard";
+import { Reveal } from "@/components/Reveal";
+import { ParallaxMedia } from "@/components/ParallaxMedia";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <section className="container-x">
+        <div className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/[0.03] px-6 py-16 shadow-[var(--shadow)] sm:px-10 sm:py-20">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-400/10"
+          />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 noise opacity-[0.26]" />
+
+          <div className="relative grid gap-14 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+            <div>
+              <Reveal>
+                <p className="text-xs tracking-[0.22em] text-white/60">
+                  MODERN WEB AGENCY
+                </p>
+              </Reveal>
+              <Reveal delay={0.08}>
+                <h1 className="mt-6 text-balance font-[var(--font-display)] text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+                  Selected work by{" "}
+                  <span className="text-gradient">WebNordic Studios</span>
+                </h1>
+              </Reveal>
+              <Reveal delay={0.14}>
+                <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-white/70 sm:text-lg">
+                  We craft premium, motion-first websites that feel futuristic,
+                  clean, and undeniably high-end.
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.22}>
+                <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    href="/work"
+                    data-cursor="active"
+                    className="group inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-medium text-white ring-1 ring-white/15 bg-white/5 transition hover:bg-white/10"
+                  >
+                    View projects
+                    <span className="ml-2 text-white/70 transition group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </Link>
+                  <a
+                    href="mailto:hello@webnordic.studio?subject=Start%20a%20project"
+                    data-cursor="active"
+                    className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium text-white"
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-blue-500/35 via-purple-500/35 to-cyan-400/35 opacity-80 blur-xl" />
+                    <span className="absolute inset-0 bg-white/10 transition group-hover:bg-white/15" />
+                    <span className="relative">Start a project</span>
+                  </a>
+                </div>
+              </Reveal>
+            </div>
+
+            <Reveal delay={0.18}>
+              <div className="relative">
+                <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-r from-blue-500/25 via-purple-500/25 to-cyan-400/25 blur-2xl" />
+                <div className="relative grid gap-4">
+                  <ParallaxMedia
+                    src={projects[0].hero.src}
+                    alt={projects[0].hero.alt}
+                    strength={22}
+                    priority
+                    className="border border-white/10"
+                  />
+                  <div className="grid grid-cols-2 gap-4">
+                    <ParallaxMedia
+                      src={projects[1].gallery[0].src}
+                      alt={projects[1].gallery[0].alt}
+                      strength={14}
+                      className="border border-white/10"
+                    />
+                    <ParallaxMedia
+                      src={projects[2].gallery[1].src}
+                      alt={projects[2].gallery[1].alt}
+                      strength={14}
+                      className="border border-white/10"
+                    />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      <section className="container-x mt-16 sm:mt-24">
+        <Reveal>
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="text-xs tracking-[0.22em] text-white/60">WORK</p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+                Featured projects
+              </h2>
+            </div>
+            <Link
+              href="/work"
+              className="hidden text-sm text-white/70 transition hover:text-white md:inline-flex"
+            >
+              Explore all →
+            </Link>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {projects.map((p, idx) => (
+            <ProjectCard key={p.slug} project={p} eager={idx === 0} />
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="container-x mt-20 sm:mt-28">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+          <Reveal>
+            <div>
+              <p className="text-xs tracking-[0.22em] text-white/60">ABOUT</p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+                Minimal, bold, and obsessed with motion.
+              </h2>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
+              <p className="text-pretty text-base leading-7 text-white/70">
+                WebNordic Studios is a modern creative studio building premium
+                web experiences. We design with restraint, ship with precision,
+                and add motion that feels effortless—not noisy.
+              </p>
+              <div className="mt-6 grid gap-3 text-sm text-white/60 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-white/80">Philosophy</p>
+                  <p className="mt-1">Clarity first. Impact always.</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-white/80">Taste</p>
+                  <p className="mt-1">Grid, whitespace, and glow.</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="services" className="container-x mt-16 sm:mt-24">
+        <Reveal>
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="text-xs tracking-[0.22em] text-white/60">SERVICES</p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+                What we do
+              </h2>
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {["Web Design", "Development", "SEO"].map((s, i) => (
+            <Reveal key={s} delay={0.05 * i}>
+              <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:bg-white/[0.05]">
+                <p className="text-lg font-semibold tracking-tight text-white">
+                  {s}
+                </p>
+                <p className="mt-2 text-sm text-white/60">
+                  Minimal copy. Maximum outcome.
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-x mt-16 sm:mt-24">
+        <Reveal>
+          <div>
+            <p className="text-xs tracking-[0.22em] text-white/60">PROCESS</p>
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+              A clean, focused flow
+            </h2>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-4">
+          {["Discover", "Design", "Build", "Launch"].map((step, i) => (
+            <Reveal key={step} delay={0.06 * i}>
+              <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                <p className="text-xs text-white/55">0{i + 1}</p>
+                <p className="mt-3 text-lg font-semibold tracking-tight text-white">
+                  {step}
+                </p>
+                <div className="mt-4 h-px w-full bg-gradient-to-r from-blue-400/50 via-purple-400/40 to-cyan-300/40" />
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-x mt-16 sm:mt-24">
+        <Reveal>
+          <div>
+            <p className="text-xs tracking-[0.22em] text-white/60">
+              SOCIAL PROOF
+            </p>
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+              Trusted by teams who care about craft
+            </h2>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {[
+            {
+              quote:
+                "WebNordic nailed the vibe—premium, fast, and genuinely fun to explore.",
+              name: "Product Lead",
+              company: "Nordwave",
+            },
+            {
+              quote:
+                "The motion is subtle but addictive. Our work finally looks as good as it is.",
+              name: "Founder",
+              company: "Fjord Architecture",
+            },
+            {
+              quote:
+                "Best build quality we’ve had. Performance and polish, both delivered.",
+              name: "Head of Growth",
+              company: "Aurora Commerce",
+            },
+          ].map((t, i) => (
+            <Reveal key={t.company} delay={0.06 * i}>
+              <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
+                <p className="text-sm leading-7 text-white/70">“{t.quote}”</p>
+                <p className="mt-5 text-sm text-white/55">
+                  <span className="text-white/80">{t.name}</span> · {t.company}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.08}>
+          <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.02] p-7">
+            <p className="text-xs tracking-[0.22em] text-white/55">
+              CLIENTS (SAMPLE)
+            </p>
+            <div className="mt-5 grid grid-cols-2 gap-3 text-sm text-white/60 sm:grid-cols-4">
+              {["Radius", "Triangle", "AskThemis", "Thunderbolt"].map((c) => (
+                <div
+                  key={c}
+                  className="rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3 text-center"
+                >
+                  {c}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="container-x mt-16 pb-16 sm:mt-24 sm:pb-24">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-10">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-cyan-400/15"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 noise opacity-[0.25]" />
+
+            <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-xs tracking-[0.22em] text-white/60">CTA</p>
+                <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Have a project in mind?
+                </h2>
+              </div>
+              <a
+                href="mailto:hello@webnordic.studio?subject=Let%E2%80%99s%20talk"
+                data-cursor="active"
+                className="group inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-medium text-white ring-1 ring-white/15 bg-white/5 transition hover:bg-white/10"
+              >
+                Let’s talk
+                <span className="ml-2 text-white/70 transition group-hover:translate-x-0.5">
+                  →
+                </span>
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </section>
     </div>
   );
 }

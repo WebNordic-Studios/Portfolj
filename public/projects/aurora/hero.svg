@@ -1,0 +1,41 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="250" y1="50" x2="1350" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1130 220) rotate(135) scale(620 520)">
+      <stop stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="b" x="-40" y="-40" width="1680" height="980" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="44" fill="#07090F"/>
+  <g opacity="0.95">
+    <path d="M210 650C420 470 520 470 760 610C1000 750 1170 710 1410 520" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M190 710C430 520 560 540 770 670C980 800 1180 770 1430 560" stroke="url(#g)" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <g filter="url(#b)" opacity="0.9">
+    <circle cx="410" cy="310" r="170" fill="url(#g)" opacity="0.52"/>
+    <circle cx="1180" cy="530" r="220" fill="url(#g)" opacity="0.30"/>
+  </g>
+
+  <rect x="240" y="160" width="1120" height="640" rx="22" fill="#0B1020" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="280" y="210" width="520" height="18" rx="9" fill="rgba(255,255,255,0.14)"/>
+  <rect x="280" y="250" width="360" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+
+  <rect x="280" y="310" width="1040" height="350" rx="18" fill="url(#g)" opacity="0.18"/>
+  <rect x="310" y="340" width="420" height="220" rx="16" fill="rgba(255,255,255,0.10)"/>
+  <rect x="760" y="340" width="530" height="48" rx="14" fill="rgba(255,255,255,0.10)"/>
+  <rect x="760" y="406" width="430" height="48" rx="14" fill="rgba(255,255,255,0.08)"/>
+  <rect x="760" y="472" width="310" height="48" rx="14" fill="rgba(255,255,255,0.06)"/>
+
+  <rect x="280" y="690" width="220" height="46" rx="23" fill="rgba(255,255,255,0.12)"/>
+  <rect x="520" y="690" width="260" height="46" rx="23" fill="rgba(96,165,250,0.22)"/>
+  <rect x="0" y="0" width="1600" height="900" rx="44" fill="url(#r)"/>
+</svg>
+

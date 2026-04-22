@@ -1,0 +1,36 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="260" y1="90" x2="1420" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1080 280) rotate(120) scale(760 560)">
+      <stop stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="b" x="-40" y="-40" width="1680" height="980" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="44" fill="#070814"/>
+  <g filter="url(#b)" opacity="0.95">
+    <circle cx="520" cy="260" r="210" fill="url(#g)" opacity="0.30"/>
+    <circle cx="1140" cy="600" r="260" fill="url(#g)" opacity="0.26"/>
+  </g>
+
+  <rect x="240" y="160" width="1120" height="640" rx="22" fill="#0B0F24" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="280" y="210" width="460" height="18" rx="9" fill="rgba(255,255,255,0.14)"/>
+  <rect x="280" y="250" width="260" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+
+  <rect x="280" y="310" width="1040" height="430" rx="18" fill="rgba(255,255,255,0.04)"/>
+  <rect x="310" y="340" width="520" height="330" rx="16" fill="url(#g)" opacity="0.14"/>
+  <rect x="850" y="340" width="440" height="90" rx="18" fill="rgba(255,255,255,0.10)"/>
+  <rect x="850" y="450" width="440" height="90" rx="18" fill="rgba(255,255,255,0.08)"/>
+  <rect x="850" y="560" width="300" height="90" rx="18" fill="rgba(96,165,250,0.18)"/>
+
+  <rect x="280" y="760" width="260" height="46" rx="23" fill="rgba(255,255,255,0.10)"/>
+  <rect x="560" y="760" width="340" height="46" rx="23" fill="rgba(167,139,250,0.18)"/>
+  <rect x="0" y="0" width="1600" height="900" rx="44" fill="url(#r)"/>
+</svg>
+
