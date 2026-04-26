@@ -13,9 +13,9 @@ function isTouchDevice() {
 }
 
 export function Cursor() {
-  const [enabled] = useState(() =>
-    typeof window === "undefined" ? false : !isTouchDevice()
-  );
+  // Important: keep SSR and first client render identical to avoid hydration mismatches.
+  // We only enable the custom cursor after the component mounts.
+  const [enabled, setEnabled] = useState(false);
   const [active, setActive] = useState(false);
 
   const x = useMotionValue(-100);
@@ -24,6 +24,10 @@ export function Cursor() {
   const sy = useSpring(y, { stiffness: 900, damping: 55, mass: 0.18 });
 
   const size = useMemo(() => ({ base: 10, active: 64 }), []);
+
+  useEffect(() => {
+    setEnabled(!isTouchDevice());
+  }, []);
 
   useEffect(() => {
     if (!enabled) return;

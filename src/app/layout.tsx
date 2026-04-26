@@ -36,8 +36,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${space.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body
+        className="min-h-full flex flex-col bg-background text-foreground"
+        suppressHydrationWarning
+      >
         <ScrollProgress />
         <Cursor />
         <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">

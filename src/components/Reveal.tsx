@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useAnimation, useInView, useReducedMotion } from "framer-motion";
+import { useEffect, useMemo, useRef } from "react";
 
 type RevealVariant = "fade-up" | "fade-down" | "fade-left" | "fade-right" | "scale" | "none";
 type MarginType =
@@ -20,6 +21,7 @@ export function Reveal({
   duration = 0.6,
   once = true,
   margin = "-10% 0px -10% 0px",
+  amount = 0.25,
 }: {
   children: React.ReactNode;
   delay?: number;
@@ -30,14 +32,17 @@ export function Reveal({
   duration?: number;
   once?: boolean;
   margin?: MarginType;
+  amount?: "some" | "all" | number;
 }) {
   const reduceMotion = useReducedMotion();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref, { once, margin, amount });
 
-  const initial = (() => {
+  const hidden = useMemo(() => {
     if (variant === "none") return { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
 
-    // If the user prefers reduced motion, keep it accessible:
-    // no positional movement/blur, but still allow a subtle fade-in.
+    // Reduced motion: still allow a subtle fade-in on scroll, no movement/blur.
     if (reduceMotion) return { opacity: 0, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
 
     return {
@@ -57,17 +62,27 @@ export function Reveal({
       scale: variant === "scale" ? 0.98 : 1,
       filter: blur > 0 ? `blur(${blur}px)` : "blur(0px)",
     };
-  })();
+  }, [blur, distance, reduceMotion, variant]);
 
-  const inView =
-    variant === "none" ? undefined : { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
+  const shown = useMemo(
+    () => ({ opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }),
+    []
+  );
+
+  useEffect(() => {
+    if (variant === "none") return;
+    if (isInView) controls.start(shown);
+  }, [controls, isInView, shown, variant]);
 
   return (
     <motion.div
+      ref={ref}
       className={className}
-      initial={initial}
-      whileInView={inView}
-      viewport={{ once, margin }}
+      initial={hidden}
+      animate={variant === "none" ? undefined : controls}
+      style={{
+        willChange: variant === "none" ? undefined : "transform, opacity, filter",
+      }}
       transition={{
         duration: reduceMotion ? Math.min(0.25, duration) : duration,
         delay,
