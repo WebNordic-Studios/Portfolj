@@ -47,7 +47,7 @@ export default function RootLayout({
         </div>
 
         <Nav />
-        <main className="flex-1 pt-24">
+        <main className="flex-1 pt-24 w-full">
           <TransitionLayout>{children}</TransitionLayout>
         </main>
         <Footer />
