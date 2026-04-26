@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 type RevealVariant = "fade-up" | "fade-down" | "fade-left" | "fade-right" | "scale" | "none";
 type MarginType =
@@ -32,9 +31,7 @@ export function Reveal({
   once?: boolean;
   margin?: MarginType;
 }) {
-  const ref = useRef<HTMLDivElement | null>(null);
   const reduceMotion = useReducedMotion();
-  const isInView = useInView(ref, { once, margin });
 
   const initial = (() => {
     if (variant === "none") return { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
@@ -62,19 +59,15 @@ export function Reveal({
     };
   })();
 
-  const animate =
-    variant === "none"
-      ? undefined
-      : isInView
-        ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }
-        : undefined;
+  const inView =
+    variant === "none" ? undefined : { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
 
   return (
     <motion.div
-      ref={ref}
       className={className}
       initial={initial}
-      animate={animate}
+      whileInView={inView}
+      viewport={{ once, margin }}
       transition={{
         duration: reduceMotion ? Math.min(0.25, duration) : duration,
         delay,
