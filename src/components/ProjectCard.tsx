@@ -16,13 +16,7 @@ export function ProjectCard({
   eager?: boolean;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-15% 0px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={cn("group relative", className)}
-    >
+    <div className={cn("group relative", className)}>
       <Link
         href={`/work/${project.slug}`}
         data-cursor="active"
@@ -67,7 +61,7 @@ export function ProjectCard({
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 }
 

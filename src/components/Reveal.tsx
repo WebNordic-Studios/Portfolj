@@ -1,15 +1,10 @@
 "use client";
 
-import { motion, useAnimation, useInView, useReducedMotion } from "framer-motion";
-import { useEffect, useMemo, useRef } from "react";
+import { MotionConfig, motion, useReducedMotion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
 
 type RevealVariant = "fade-up" | "fade-down" | "fade-left" | "fade-right" | "scale" | "none";
-type MarginType =
-  | `${number}${"px" | "%"}`
-  | `${number}${"px" | "%"} ${number}${"px" | "%"}`
-  | `${number}${"px" | "%"} ${number}${"px" | "%"} ${number}${"px" | "%"}`
-  | `${number}${"px" | "%"} ${number}${"px" | "%"} ${number}${"px" | "%"} ${number}${"px" | "%"}`
-  | undefined;
+type MarginType = string | undefined;
 
 export function Reveal({
   children,
@@ -20,7 +15,10 @@ export function Reveal({
   blur = 6,
   duration = 0.6,
   once = true,
-  margin = "-10% 0px -10% 0px",
+  activateOnScroll = false,
+  // Use px margins for broad IntersectionObserver compatibility.
+  // (Percent rootMargin has inconsistent support and can prevent triggers.)
+  margin = "-120px 0px -120px 0px",
   amount = 0.25,
 }: {
   children: React.ReactNode;
@@ -31,74 +29,83 @@ export function Reveal({
   blur?: number;
   duration?: number;
   once?: boolean;
+  activateOnScroll?: boolean;
   margin?: MarginType;
   amount?: "some" | "all" | number;
 }) {
   const reduceMotion = useReducedMotion();
-  const ref = useRef<HTMLDivElement | null>(null);
-  const controls = useAnimation();
-  const isInView = useInView(ref, { once, margin, amount });
+  const [armed, setArmed] = useState(() => !activateOnScroll);
 
-  const hidden = useMemo(() => {
-    if (variant === "none") return { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
+  useEffect(() => {
+    if (!activateOnScroll) return;
+    if (armed) return;
 
-    // Reduced motion: still allow a subtle fade-in on scroll, no movement/blur.
-    if (reduceMotion) return { opacity: 0, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
+    const arm = () => setArmed(true);
+
+    // Any scroll/wheel/touch indicates user intent.
+    window.addEventListener("scroll", arm, { passive: true, once: true });
+    window.addEventListener("wheel", arm, { passive: true, once: true });
+    window.addEventListener("touchmove", arm, { passive: true, once: true });
+
+    return () => {
+      window.removeEventListener("scroll", arm);
+      window.removeEventListener("wheel", arm);
+      window.removeEventListener("touchmove", arm);
+    };
+  }, [activateOnScroll, armed]);
+
+  const { hidden, shown } = useMemo(() => {
+    const shownState = { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };
+
+    if (variant === "none") {
+      return { hidden: shownState, shown: shownState };
+    }
+
+    // Reduced motion: fade only (no movement/blur).
+    if (reduceMotion) {
+      return {
+        hidden: { ...shownState, opacity: 0 },
+        shown: shownState,
+      };
+    }
+
+    const x =
+      variant === "fade-left" ? distance : variant === "fade-right" ? -distance : 0;
+    const y =
+      variant === "fade-up" ? distance : variant === "fade-down" ? -distance : 0;
 
     return {
-      opacity: 0,
-      x:
-        variant === "fade-left"
-          ? distance
-          : variant === "fade-right"
-            ? -distance
-            : 0,
-      y:
-        variant === "fade-up"
-          ? distance
-          : variant === "fade-down"
-            ? -distance
-            : 0,
-      scale: variant === "scale" ? 0.98 : 1,
-      filter: blur > 0 ? `blur(${blur}px)` : "blur(0px)",
+      hidden: {
+        opacity: 0,
+        x,
+        y,
+        scale: variant === "scale" ? 0.98 : 1,
+        filter: blur > 0 ? `blur(${blur}px)` : "blur(0px)",
+      },
+      shown: shownState,
     };
   }, [blur, distance, reduceMotion, variant]);
 
-  const shown = useMemo(
-    () => ({ opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }),
-    []
-  );
-
-  useEffect(() => {
-    if (variant === "none") return;
-    if (isInView) controls.start(shown);
-  }, [controls, isInView, shown, variant]);
-
-  const show = () => {
-    if (variant === "none") return;
-    controls.start(shown);
-  };
-
   return (
-    <motion.div
-      ref={ref}
-      className={className}
-      initial={hidden}
-      animate={variant === "none" ? undefined : controls}
-      whileInView={variant === "none" ? undefined : shown}
-      viewport={{ once, margin, amount }}
-      onViewportEnter={show}
-      style={{
-        willChange: variant === "none" ? undefined : "transform, opacity, filter",
-      }}
-      transition={{
-        duration: reduceMotion ? Math.min(0.25, duration) : duration,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      {children}
-    </motion.div>
+    <MotionConfig reducedMotion="never">
+      <motion.div
+        className={className}
+        initial={hidden}
+        whileInView={armed ? shown : undefined}
+        animate={!armed ? hidden : undefined}
+        viewport={{ once, margin, amount }}
+        style={{
+          willChange: variant === "none" ? undefined : "transform, opacity, filter",
+        }}
+        transition={{
+          duration: reduceMotion ? Math.min(0.25, duration) : duration,
+          delay,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        {children}
+      </motion.div>
+    </MotionConfig>
   );
 }
 

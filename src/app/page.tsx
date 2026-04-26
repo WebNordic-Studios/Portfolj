@@ -48,7 +48,7 @@ export default function Home() {
                     </span>
                   </Link>
                   <a
-                    href="mailto:hello@webnordic.studio?subject=Start%20a%20project"
+                    href="mailto:hello@webnordic.studio?subject=Work%20with%20us"
                     data-cursor="active"
                     className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium text-white"
                   >
@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       <section className="container-x mt-16 sm:mt-24">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-xs tracking-[0.22em] text-white/60">WORK</p>
@@ -112,14 +112,24 @@ export default function Home() {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {projects.map((p, idx) => (
-            <ProjectCard key={p.slug} project={p} eager={idx === 0} />
+            <Reveal
+              key={p.slug}
+              delay={0.06 * idx}
+              margin="0px 0px -60px 0px"
+              amount={0.55}
+              distance={24}
+              duration={0.7}
+              activateOnScroll
+            >
+              <ProjectCard project={p} eager={idx === 0} />
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section id="about" className="container-x mt-20 sm:mt-28">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <Reveal>
+          <Reveal activateOnScroll>
             <div>
               <p className="text-xs tracking-[0.22em] text-white/60">ABOUT</p>
               <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -127,7 +137,7 @@ export default function Home() {
               </h2>
             </div>
           </Reveal>
-          <Reveal delay={0.08}>
+          <Reveal delay={0.08} activateOnScroll>
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
               <p className="text-pretty text-base leading-7 text-white/70">
                 WebNordic Studios is a modern creative studio building premium
@@ -150,7 +160,7 @@ export default function Home() {
       </section>
 
       <section id="services" className="container-x mt-16 sm:mt-24">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-xs tracking-[0.22em] text-white/60">SERVICES</p>
@@ -163,7 +173,7 @@ export default function Home() {
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {["Web Design", "Development", "SEO"].map((s, i) => (
-            <Reveal key={s} delay={0.05 * i}>
+            <Reveal key={s} delay={0.05 * i} activateOnScroll>
               <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:bg-white/[0.05]">
                 <p className="text-lg font-semibold tracking-tight text-white">
                   {s}
@@ -178,7 +188,7 @@ export default function Home() {
       </section>
 
       <section className="container-x mt-16 sm:mt-24">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div>
             <p className="text-xs tracking-[0.22em] text-white/60">PROCESS</p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -189,7 +199,7 @@ export default function Home() {
 
         <div className="mt-10 grid gap-4 md:grid-cols-4">
           {["Discover", "Design", "Build", "Launch"].map((step, i) => (
-            <Reveal key={step} delay={0.06 * i}>
+            <Reveal key={step} delay={0.06 * i} activateOnScroll>
               <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
                 <p className="text-xs text-white/55">0{i + 1}</p>
                 <p className="mt-3 text-lg font-semibold tracking-tight text-white">
@@ -203,7 +213,7 @@ export default function Home() {
       </section>
 
       <section className="container-x mt-16 sm:mt-24">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div>
             <p className="text-xs tracking-[0.22em] text-white/60">
               SOCIAL PROOF
@@ -235,7 +245,7 @@ export default function Home() {
               company: "Aurora Commerce",
             },
           ].map((t, i) => (
-            <Reveal key={t.company} delay={0.06 * i}>
+            <Reveal key={t.company} delay={0.06 * i} activateOnScroll>
               <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
                 <p className="text-sm leading-7 text-white/70">“{t.quote}”</p>
                 <p className="mt-5 text-sm text-white/55">
@@ -246,7 +256,7 @@ export default function Home() {
           ))}
         </div>
 
-        <Reveal delay={0.08}>
+        <Reveal delay={0.08} activateOnScroll>
           <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.02] p-7">
             <p className="text-xs tracking-[0.22em] text-white/55">
               CLIENTS (SAMPLE)
@@ -266,7 +276,7 @@ export default function Home() {
       </section>
 
       <section className="container-x mt-16 pb-16 sm:mt-24 sm:pb-24">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-10">
             <div
               aria-hidden="true"

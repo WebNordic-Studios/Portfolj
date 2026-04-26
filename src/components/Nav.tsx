@@ -74,7 +74,7 @@ export function Nav() {
             >
               <span className="absolute inset-0 bg-gradient-to-r from-blue-500/35 via-purple-500/35 to-cyan-400/35 opacity-80 blur-xl" />
               <span className="absolute inset-0 bg-white/10 transition group-hover:bg-white/15" />
-              <span className="relative">Start a project</span>
+              <span className="relative">Work with us</span>
             </Link>
           </div>
         </motion.div>

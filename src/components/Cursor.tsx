@@ -15,7 +15,7 @@ function isTouchDevice() {
 export function Cursor() {
   // Important: keep SSR and first client render identical to avoid hydration mismatches.
   // We only enable the custom cursor after the component mounts.
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState<boolean | null>(null);
   const [active, setActive] = useState(false);
 
   const x = useMotionValue(-100);
@@ -26,7 +26,9 @@ export function Cursor() {
   const size = useMemo(() => ({ base: 10, active: 64 }), []);
 
   useEffect(() => {
-    setEnabled(!isTouchDevice());
+    // Defer enabling until after mount so we can safely read window APIs
+    // without changing the initial rendered output.
+    queueMicrotask(() => setEnabled(!isTouchDevice()));
   }, []);
 
   useEffect(() => {
@@ -69,7 +71,7 @@ export function Cursor() {
     );
   }, [enabled]);
 
-  if (!enabled) return null;
+  if (enabled !== true) return null;
 
   return (
     <motion.div

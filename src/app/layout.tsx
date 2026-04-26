@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { TransitionLayout } from "@/components/TransitionLayout";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Cursor } from "@/components/Cursor";
+import { ScrollBackdrop } from "@/components/ScrollBackdrop";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -44,11 +45,7 @@ export default function RootLayout({
       >
         <ScrollProgress />
         <Cursor />
-        <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-grid opacity-[0.18]" />
-          <div className="absolute inset-0 noise opacity-[0.32]" />
-          <div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-400/20 blur-3xl" />
-        </div>
+        <ScrollBackdrop />
 
         <Nav />
         <main className="flex-1 pt-24 w-full">

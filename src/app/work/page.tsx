@@ -31,7 +31,17 @@ export default function WorkPage() {
 
       <section className="mt-12 grid gap-6 lg:grid-cols-3">
         {projects.map((p, idx) => (
-          <ProjectCard key={p.slug} project={p} eager={idx === 0} />
+          <Reveal
+            key={p.slug}
+            delay={0.06 * idx}
+            margin="0px 0px -60px 0px"
+            amount={0.55}
+            distance={24}
+            duration={0.7}
+            activateOnScroll
+          >
+            <ProjectCard project={p} eager={idx === 0} />
+          </Reveal>
         ))}
       </section>
     </div>

@@ -78,7 +78,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </section>
 
       <section className="mt-14 grid gap-6 lg:grid-cols-12">
-        <Reveal className="lg:col-span-5">
+        <Reveal className="lg:col-span-5" activateOnScroll>
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
             <p className="text-xs tracking-[0.22em] text-white/55">PROBLEM</p>
             <p className="mt-4 text-pretty text-sm leading-7 text-white/70">
@@ -86,7 +86,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </p>
           </div>
         </Reveal>
-        <Reveal delay={0.06} className="lg:col-span-7">
+        <Reveal delay={0.06} className="lg:col-span-7" activateOnScroll>
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
             <p className="text-xs tracking-[0.22em] text-white/55">SOLUTION</p>
             <p className="mt-4 text-pretty text-sm leading-7 text-white/70">
@@ -97,7 +97,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </section>
 
       <section className="mt-10">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7">
             <p className="text-xs tracking-[0.22em] text-white/55">RESULTS</p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -118,7 +118,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </section>
 
       <section className="mt-14">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="text-xs tracking-[0.22em] text-white/60">GALLERY</p>
@@ -131,7 +131,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {project.gallery.map((img, idx) => (
-            <Reveal key={img.src} delay={0.04 * idx}>
+            <Reveal key={img.src} delay={0.04 * idx} activateOnScroll>
               <ParallaxMedia
                 src={img.src}
                 alt={img.alt}
@@ -144,7 +144,7 @@ export default async function CaseStudyPage({ params }: Props) {
       </section>
 
       <section className="mt-16">
-        <Reveal>
+        <Reveal activateOnScroll>
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-10">
             <div
               aria-hidden="true"
