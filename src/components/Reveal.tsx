@@ -74,12 +74,20 @@ export function Reveal({
     if (isInView) controls.start(shown);
   }, [controls, isInView, shown, variant]);
 
+  const show = () => {
+    if (variant === "none") return;
+    controls.start(shown);
+  };
+
   return (
     <motion.div
       ref={ref}
       className={className}
       initial={hidden}
       animate={variant === "none" ? undefined : controls}
+      whileInView={variant === "none" ? undefined : shown}
+      viewport={{ once, margin, amount }}
+      onViewportEnter={show}
       style={{
         willChange: variant === "none" ? undefined : "transform, opacity, filter",
       }}
