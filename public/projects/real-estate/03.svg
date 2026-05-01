@@ -1,0 +1,19 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="220" y1="160" x2="1400" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" rx="48" fill="#060A0A"/>
+  <rect x="180" y="120" width="1240" height="860" rx="26" fill="#0A1212" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="220" y="170" width="420" height="20" rx="10" fill="rgba(255,255,255,0.12)"/>
+  <rect x="220" y="214" width="260" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+
+  <rect x="220" y="280" width="1180" height="660" rx="22" fill="url(#g)" opacity="0.08"/>
+  <rect x="260" y="320" width="860" height="520" rx="20" fill="rgba(255,255,255,0.07)"/>
+  <rect x="1140" y="320" width="260" height="250" rx="20" fill="rgba(255,255,255,0.06)"/>
+  <rect x="1140" y="590" width="260" height="250" rx="20" fill="rgba(34,211,238,0.14)"/>
+  <rect x="300" y="860" width="320" height="58" rx="18" fill="rgba(167,139,250,0.14)"/>
+</svg>
+
