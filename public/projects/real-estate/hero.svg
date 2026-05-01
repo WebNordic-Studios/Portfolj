@@ -1,31 +1,89 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="260" y1="80" x2="1420" y2="860" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="200" y1="80" x2="1400" y2="880" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05090B"/>
+      <stop offset="1" stop-color="#070A12"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="280" y1="120" x2="1320" y2="780" gradientUnits="userSpaceOnUse">
       <stop stop-color="#22D3EE"/>
       <stop offset="1" stop-color="#A78BFA"/>
     </linearGradient>
-    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(520 260) rotate(25) scale(820 620)">
-      <stop stop-color="#ffffff" stop-opacity="0.12"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="rgba(255,255,255,0.12)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+    <filter id="shadow" x="-40" y="-40" width="1680" height="980" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
   </defs>
 
-  <rect width="1600" height="900" rx="44" fill="#060A0A"/>
-  <g opacity="0.95">
-    <path d="M190 660C380 520 520 520 740 620C960 720 1160 710 1410 540" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
-    <path d="M210 720C420 560 560 570 770 670C980 770 1170 770 1390 610" stroke="url(#g)" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+  <rect width="1600" height="900" rx="44" fill="url(#bg)"/>
+  <g filter="url(#shadow)" opacity="0.9">
+    <circle cx="420" cy="240" r="190" fill="url(#accent)" opacity="0.26"/>
+    <circle cx="1220" cy="620" r="240" fill="url(#accent)" opacity="0.20"/>
   </g>
 
-  <rect x="240" y="160" width="1120" height="640" rx="22" fill="#0A1212" stroke="rgba(255,255,255,0.10)"/>
-  <rect x="280" y="210" width="380" height="18" rx="9" fill="rgba(255,255,255,0.12)"/>
-  <rect x="280" y="250" width="240" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+  <!-- Browser frame -->
+  <rect x="200" y="120" width="1200" height="660" rx="26" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="232" y="152" width="250" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+  <rect x="232" y="180" width="420" height="10" rx="5" fill="rgba(255,255,255,0.07)"/>
 
-  <rect x="280" y="310" width="1040" height="430" rx="18" fill="url(#g)" opacity="0.12"/>
-  <rect x="310" y="340" width="720" height="330" rx="16" fill="rgba(255,255,255,0.08)"/>
-  <rect x="1050" y="340" width="240" height="330" rx="16" fill="rgba(255,255,255,0.06)"/>
+  <!-- Top nav -->
+  <text x="250" y="230" fill="rgba(255,255,255,0.90)" font-size="18" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Northline Estates
+  </text>
+  <text x="1140" y="230" fill="rgba(255,255,255,0.55)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Buy   Rent   Sell   Contact
+  </text>
+  <rect x="1220" y="210" width="150" height="34" rx="17" fill="rgba(34,211,238,0.16)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1240" y="233" fill="rgba(255,255,255,0.86)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Book viewing →
+  </text>
 
-  <rect x="280" y="760" width="260" height="46" rx="23" fill="rgba(255,255,255,0.10)"/>
-  <rect x="560" y="760" width="320" height="46" rx="23" fill="rgba(34,211,238,0.18)"/>
-  <rect x="0" y="0" width="1600" height="900" rx="44" fill="url(#r)"/>
+  <!-- Hero content -->
+  <text x="250" y="285" fill="rgba(255,255,255,0.60)" font-size="12" letter-spacing="2.2" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    REAL ESTATE · WEB DESIGN + SEO
+  </text>
+  <text x="250" y="340" fill="rgba(255,255,255,0.92)" font-size="42" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Find your next place —
+  </text>
+  <text x="250" y="388" fill="rgba(255,255,255,0.92)" font-size="42" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    without the friction.
+  </text>
+  <text x="250" y="425" fill="rgba(255,255,255,0.62)" font-size="16" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Fast filters, clean listing pages, and an enquiry flow tuned for mobile.
+  </text>
+
+  <!-- Search bar -->
+  <rect x="250" y="455" width="760" height="58" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="278" y="491" fill="rgba(255,255,255,0.45)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    City, postcode, or neighborhood…
+  </text>
+  <rect x="884" y="466" width="110" height="36" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="910" y="490" fill="rgba(255,255,255,0.62)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Filters
+  </text>
+  <rect x="1008" y="466" width="170" height="36" rx="14" fill="rgba(34,211,238,0.18)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1044" y="490" fill="rgba(255,255,255,0.86)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Search homes
+  </text>
+
+  <!-- Results grid + map -->
+  <rect x="250" y="540" width="560" height="210" rx="20" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="270" y="560" width="160" height="88" rx="14" fill="url(#photo)"/>
+  <rect x="444" y="560" width="160" height="88" rx="14" fill="url(#photo)"/>
+  <rect x="618" y="560" width="172" height="88" rx="14" fill="url(#photo)"/>
+  <rect x="270" y="660" width="160" height="70" rx="14" fill="rgba(255,255,255,0.04)"/>
+  <rect x="444" y="660" width="160" height="70" rx="14" fill="rgba(255,255,255,0.04)"/>
+  <rect x="618" y="660" width="172" height="70" rx="14" fill="rgba(255,255,255,0.04)"/>
+
+  <rect x="830" y="540" width="548" height="210" rx="20" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="850" y="575" fill="rgba(255,255,255,0.70)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Map view
+  </text>
+  <path d="M860 720C980 610 1100 650 1210 560C1300 490 1350 520 1365 540" stroke="url(#accent)" stroke-width="3" opacity="0.55"/>
+  <circle cx="1010" cy="640" r="7" fill="rgba(34,211,238,0.9)"/>
+  <circle cx="1220" cy="560" r="7" fill="rgba(167,139,250,0.9)"/>
+  <circle cx="1335" cy="545" r="7" fill="rgba(34,211,238,0.9)"/>
 </svg>
 

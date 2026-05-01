@@ -1,19 +1,97 @@
 <svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="240" y1="140" x2="1400" y2="980" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#A78BFA"/>
+    <linearGradient id="bg" x1="220" y1="120" x2="1420" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0706"/>
+      <stop offset="1" stop-color="#0A0711"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="240" x2="1400" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="0.55" stop-color="#A78BFA"/>
       <stop offset="1" stop-color="#60A5FA"/>
     </linearGradient>
   </defs>
-  <rect width="1600" height="1100" rx="48" fill="#070814"/>
-  <rect x="180" y="120" width="1240" height="860" rx="26" fill="#0B0F24" stroke="rgba(255,255,255,0.10)"/>
-  <rect x="220" y="170" width="560" height="22" rx="11" fill="rgba(255,255,255,0.14)"/>
-  <rect x="220" y="214" width="300" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
 
-  <rect x="220" y="280" width="1180" height="620" rx="20" fill="url(#g)" opacity="0.10"/>
-  <rect x="260" y="320" width="520" height="500" rx="18" fill="rgba(255,255,255,0.10)"/>
-  <rect x="800" y="320" width="600" height="220" rx="18" fill="rgba(255,255,255,0.08)"/>
-  <rect x="800" y="560" width="600" height="260" rx="18" fill="rgba(96,165,250,0.14)"/>
-  <rect x="260" y="840" width="320" height="58" rx="18" fill="rgba(167,139,250,0.16)"/>
+  <rect width="1600" height="1100" rx="48" fill="url(#bg)"/>
+  <rect x="180" y="120" width="1240" height="860" rx="26" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+
+  <text x="220" y="190" fill="rgba(255,255,255,0.60)" font-size="12" letter-spacing="2.2" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    MENU
+  </text>
+  <text x="220" y="240" fill="rgba(255,255,255,0.92)" font-size="28" font-weight="700" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    A menu designed to be scanned
+  </text>
+  <text x="220" y="274" fill="rgba(255,255,255,0.62)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Categories, prices, and “what’s popular” without clutter.
+  </text>
+
+  <!-- Category tabs -->
+  <rect x="220" y="310" width="1180" height="46" rx="16" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="236" y="318" width="120" height="30" rx="14" fill="rgba(245,158,11,0.18)"/>
+  <text x="265" y="339" fill="rgba(255,255,255,0.86)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Coffee
+  </text>
+  <text x="380" y="339" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Pastries
+  </text>
+  <text x="470" y="339" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Lunch
+  </text>
+  <text x="540" y="339" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Seasonal
+  </text>
+
+  <!-- Menu list -->
+  <rect x="220" y="380" width="760" height="530" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="250" y="430" fill="rgba(255,255,255,0.88)" font-size="16" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Espresso
+  </text>
+  <rect x="250" y="450" width="680" height="1" fill="rgba(255,255,255,0.10)"/>
+  <text x="250" y="485" fill="rgba(255,255,255,0.78)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Flat white
+  </text>
+  <text x="890" y="485" fill="rgba(255,255,255,0.62)" font-size="14" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    4.5
+  </text>
+  <rect x="250" y="500" width="520" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+  <text x="250" y="540" fill="rgba(255,255,255,0.78)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Cappuccino
+  </text>
+  <text x="890" y="540" fill="rgba(255,255,255,0.62)" font-size="14" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    4.2
+  </text>
+  <rect x="250" y="555" width="460" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+  <text x="250" y="595" fill="rgba(255,255,255,0.78)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Cold brew
+  </text>
+  <text x="890" y="595" fill="rgba(255,255,255,0.62)" font-size="14" text-anchor="end" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    4.9
+  </text>
+  <rect x="250" y="610" width="540" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+
+  <rect x="250" y="665" width="180" height="30" rx="14" fill="rgba(245,158,11,0.16)"/>
+  <text x="270" y="686" fill="rgba(255,255,255,0.80)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Popular today
+  </text>
+
+  <!-- Side panel -->
+  <rect x="1000" y="380" width="400" height="530" rx="22" fill="url(#accent)" opacity="0.10" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1030" y="430" fill="rgba(255,255,255,0.88)" font-size="16" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Opening hours
+  </text>
+  <rect x="1030" y="450" width="340" height="1" fill="rgba(255,255,255,0.10)"/>
+  <text x="1030" y="485" fill="rgba(255,255,255,0.62)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Mon–Fri 07–18
+  </text>
+  <text x="1030" y="512" fill="rgba(255,255,255,0.62)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Sat–Sun 08–16
+  </text>
+  <rect x="1030" y="560" width="240" height="44" rx="18" fill="rgba(245,158,11,0.18)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1062" y="588" fill="rgba(255,255,255,0.86)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Get directions →
+  </text>
+  <rect x="1030" y="616" width="240" height="44" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1060" y="644" fill="rgba(255,255,255,0.70)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Call café
+  </text>
 </svg>
 

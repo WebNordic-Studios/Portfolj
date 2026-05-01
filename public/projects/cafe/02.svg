@@ -1,22 +1,73 @@
 <svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="260" y1="160" x2="1420" y2="980" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#A78BFA"/>
+    <linearGradient id="bg" x1="220" y1="120" x2="1420" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B0706"/>
+      <stop offset="1" stop-color="#0A0711"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="240" x2="1400" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="0.55" stop-color="#A78BFA"/>
       <stop offset="1" stop-color="#60A5FA"/>
     </linearGradient>
   </defs>
-  <rect width="1600" height="1100" rx="48" fill="#070814"/>
-  <rect x="180" y="120" width="1240" height="860" rx="26" fill="#0B0F24" stroke="rgba(255,255,255,0.10)"/>
-  <rect x="220" y="170" width="430" height="20" rx="10" fill="rgba(255,255,255,0.14)"/>
-  <rect x="220" y="214" width="280" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
 
-  <rect x="220" y="280" width="1180" height="660" rx="22" fill="rgba(255,255,255,0.04)"/>
-  <rect x="260" y="330" width="700" height="280" rx="20" fill="url(#g)" opacity="0.12"/>
-  <rect x="980" y="330" width="420" height="280" rx="20" fill="rgba(255,255,255,0.08)"/>
-  <rect x="260" y="630" width="1140" height="310" rx="20" fill="rgba(255,255,255,0.06)"/>
+  <rect width="1600" height="1100" rx="48" fill="url(#bg)"/>
+  <rect x="180" y="120" width="1240" height="860" rx="26" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
 
-  <rect x="300" y="690" width="360" height="54" rx="18" fill="rgba(255,255,255,0.10)"/>
-  <rect x="680" y="690" width="220" height="54" rx="18" fill="rgba(96,165,250,0.18)"/>
-  <rect x="300" y="760" width="520" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+  <text x="220" y="190" fill="rgba(255,255,255,0.60)" font-size="12" letter-spacing="2.2" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    LOCATION
+  </text>
+  <text x="220" y="240" fill="rgba(255,255,255,0.92)" font-size="28" font-weight="700" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Hours + directions are effortless
+  </text>
+  <text x="220" y="274" fill="rgba(255,255,255,0.62)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Reduce calls and messages by making the essentials obvious.
+  </text>
+
+  <!-- Map -->
+  <rect x="220" y="320" width="780" height="590" rx="22" fill="url(#accent)" opacity="0.08" stroke="rgba(255,255,255,0.10)"/>
+  <text x="250" y="365" fill="rgba(255,255,255,0.60)" font-size="12" letter-spacing="2.0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    MAP
+  </text>
+  <path d="M260 860C430 700 560 740 690 640C820 540 900 560 960 520" stroke="rgba(245,158,11,0.65)" stroke-width="4" opacity="0.8"/>
+  <circle cx="760" cy="620" r="10" fill="rgba(245,158,11,0.90)"/>
+  <circle cx="520" cy="740" r="8" fill="rgba(167,139,250,0.80)"/>
+
+  <!-- Info cards -->
+  <rect x="1020" y="320" width="400" height="260" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1050" y="365" fill="rgba(255,255,255,0.88)" font-size="16" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Open today
+  </text>
+  <text x="1050" y="395" fill="rgba(255,255,255,0.62)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    07:00 — 18:00
+  </text>
+  <rect x="1050" y="425" width="340" height="1" fill="rgba(255,255,255,0.10)"/>
+  <text x="1050" y="460" fill="rgba(255,255,255,0.78)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    12 Harbor St
+  </text>
+  <text x="1050" y="484" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    5 min walk from Central Station
+  </text>
+  <rect x="1050" y="520" width="220" height="44" rx="18" fill="rgba(245,158,11,0.18)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1082" y="548" fill="rgba(255,255,255,0.86)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Directions →
+  </text>
+
+  <rect x="1020" y="610" width="400" height="300" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1050" y="655" fill="rgba(255,255,255,0.88)" font-size="16" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Quick contact
+  </text>
+  <rect x="1050" y="680" width="340" height="44" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1070" y="708" fill="rgba(255,255,255,0.45)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Call / message
+  </text>
+  <rect x="1050" y="736" width="340" height="44" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1070" y="764" fill="rgba(255,255,255,0.45)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Email
+  </text>
+  <rect x="1050" y="796" width="200" height="44" rx="18" fill="rgba(167,139,250,0.14)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1080" y="824" fill="rgba(255,255,255,0.78)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Copy address
+  </text>
 </svg>
 

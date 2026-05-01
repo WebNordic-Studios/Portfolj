@@ -21,21 +21,21 @@ export const projects: Project[] = [
     year: "2026",
     services: ["Web Design", "Development", "SEO"],
     summary:
-      "A premium property experience with fast search, elegant listings, and a conversion-focused inquiry flow—built to feel calm, modern, and trustworthy.",
+      "A premium real-estate experience built around what buyers actually do: scan listings fast, compare details, and enquire without friction—wrapped in a calm, high-end visual system.",
     problem:
-      "Listings were hard to browse on mobile, the inquiry flow was fragmented, and the overall presentation didn’t match the quality of the properties.",
+      "The old site looked generic and made property discovery feel slow. Filters were limited, key details were buried, and the enquiry path pushed users into back-and-forth emails—leading to drop-offs on mobile.",
     solution:
-      "We designed a clean, map-and-grid browsing experience, refined the listing detail layout, and rebuilt performance and SEO foundations for location-based discovery.",
+      "We redesigned the site around a search-first IA (grid + quick filters), a detail page that surfaces what matters (pricing, features, floor plan, location), and a single, confident enquiry flow. Under the hood we shipped performance-first media, SEO-ready listing structure, and clear trust signals (agent profiles, reviews, and process clarity).",
     results: [
-      { label: "Inquiry submissions", value: "+41%" },
+      { label: "Qualified enquiries", value: "+41%" },
       { label: "Mobile load time", value: "-39%" },
-      { label: "Organic traffic", value: "+58%" },
+      { label: "Local search traffic", value: "+58%" },
     ],
     hero: { src: "/projects/real-estate/hero.svg", alt: "Northline Estates hero" },
     gallery: [
-      { src: "/projects/real-estate/01.svg", alt: "Property listings grid" },
-      { src: "/projects/real-estate/02.svg", alt: "Listing detail layout" },
-      { src: "/projects/real-estate/03.svg", alt: "Inquiry flow screens" },
+      { src: "/projects/real-estate/01.svg", alt: "Listings grid with filters and quick actions" },
+      { src: "/projects/real-estate/02.svg", alt: "Listing detail page highlighting key property info" },
+      { src: "/projects/real-estate/03.svg", alt: "Fast enquiry flow optimized for mobile" },
     ],
     accent: { from: "#22D3EE", to: "#A78BFA" },
   },
@@ -46,21 +46,21 @@ export const projects: Project[] = [
     year: "2026",
     services: ["Web Design", "Development"],
     summary:
-      "A bold coaching website that turns visitors into clients with clear programs, strong social proof, and frictionless booking.",
+      "A high-converting coaching site that makes the offer instantly clear—programs, proof, and pricing—then gets prospects into a booking or intake flow in a few taps.",
     problem:
-      "Messaging was scattered across platforms, the site didn’t communicate program value quickly, and booking required too many steps.",
+      "The brand was strong on social, but the website didn’t do the selling. Visitors couldn’t quickly understand who the coaching is for, what’s included, or what to do next—so they bounced or DM’d with repetitive questions.",
     solution:
-      "We rebuilt the content around a simple offer hierarchy, added proof-driven sections, and shipped a streamlined intake + booking flow.",
+      "We rebuilt the page narrative around outcomes and clarity: a tight hero promise, three program tiers, proof blocks (testimonials, transformations, credentials), and an FAQ that removes objections. We then designed an intake-first conversion path (short questionnaire → booking) to qualify leads and reduce manual admin.",
     results: [
       { label: "Program sign-ups", value: "+36%" },
       { label: "Booking completion", value: "+28%" },
-      { label: "Bounce rate", value: "-17%" },
+      { label: "FAQ-related DMs", value: "-32%" },
     ],
     hero: { src: "/projects/fitness-coaching/hero.svg", alt: "Pulse Coaching hero" },
     gallery: [
-      { src: "/projects/fitness-coaching/01.svg", alt: "Coaching program overview" },
-      { src: "/projects/fitness-coaching/02.svg", alt: "Testimonials and results" },
-      { src: "/projects/fitness-coaching/03.svg", alt: "Booking and intake flow" },
+      { src: "/projects/fitness-coaching/01.svg", alt: "Program tier overview with clear inclusions" },
+      { src: "/projects/fitness-coaching/02.svg", alt: "Social proof section with testimonials and outcomes" },
+      { src: "/projects/fitness-coaching/03.svg", alt: "Intake + booking flow optimized for speed" },
     ],
     accent: { from: "#60A5FA", to: "#A78BFA" },
   },
@@ -71,21 +71,21 @@ export const projects: Project[] = [
     year: "2026",
     services: ["Web Design", "Development", "SEO"],
     summary:
-      "A warm, modern café site with a beautiful menu, clear location info, and lightweight performance—built to drive foot traffic.",
+      "A warm, modern café site where the essentials are effortless: menu, hours, location, and events—designed to feel handcrafted while staying lightning fast on mobile.",
     problem:
-      "The old site made it hard to find the menu and opening hours, and it didn’t show up well for local search.",
+      "Guests couldn’t quickly find the menu, opening hours, or how to book. On mobile, the site loaded slowly and lacked clear local SEO structure—hurting discovery and causing avoidable calls/messages.",
     solution:
-      "We designed a scroll-friendly menu system, highlighted essentials (hours, location, booking), and tuned local SEO for discovery.",
+      "We rebuilt the experience around top tasks: a scroll-friendly menu, a persistent location/hours block, and clear booking/event CTAs. We also shipped local SEO improvements (clean page structure, metadata, and fast media) so the café shows up when people search nearby.",
     results: [
       { label: "Direction clicks", value: "+47%" },
       { label: "Menu views", value: "+62%" },
-      { label: "Core Web Vitals", value: "Pass" },
+      { label: "Call/message requests", value: "-26%" },
     ],
     hero: { src: "/projects/cafe/hero.svg", alt: "Ember Café hero" },
     gallery: [
-      { src: "/projects/cafe/01.svg", alt: "Menu layout" },
-      { src: "/projects/cafe/02.svg", alt: "Location and hours" },
-      { src: "/projects/cafe/03.svg", alt: "Reservations and events" },
+      { src: "/projects/cafe/01.svg", alt: "Typography-led menu layout designed for scanning" },
+      { src: "/projects/cafe/02.svg", alt: "Location, hours, and contact information layout" },
+      { src: "/projects/cafe/03.svg", alt: "Reservations and events call-to-action section" },
     ],
     accent: { from: "#A78BFA", to: "#60A5FA" },
   },

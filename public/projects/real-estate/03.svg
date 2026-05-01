@@ -1,19 +1,82 @@
 <svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="220" y1="160" x2="1400" y2="980" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="220" y1="120" x2="1420" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#060A0A"/>
+      <stop offset="1" stop-color="#070A12"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="240" x2="1400" y2="920" gradientUnits="userSpaceOnUse">
       <stop stop-color="#22D3EE"/>
       <stop offset="1" stop-color="#A78BFA"/>
     </linearGradient>
   </defs>
-  <rect width="1600" height="1100" rx="48" fill="#060A0A"/>
-  <rect x="180" y="120" width="1240" height="860" rx="26" fill="#0A1212" stroke="rgba(255,255,255,0.10)"/>
-  <rect x="220" y="170" width="420" height="20" rx="10" fill="rgba(255,255,255,0.12)"/>
-  <rect x="220" y="214" width="260" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
 
-  <rect x="220" y="280" width="1180" height="660" rx="22" fill="url(#g)" opacity="0.08"/>
-  <rect x="260" y="320" width="860" height="520" rx="20" fill="rgba(255,255,255,0.07)"/>
-  <rect x="1140" y="320" width="260" height="250" rx="20" fill="rgba(255,255,255,0.06)"/>
-  <rect x="1140" y="590" width="260" height="250" rx="20" fill="rgba(34,211,238,0.14)"/>
-  <rect x="300" y="860" width="320" height="58" rx="18" fill="rgba(167,139,250,0.14)"/>
+  <rect width="1600" height="1100" rx="48" fill="url(#bg)"/>
+  <rect x="220" y="150" width="520" height="900" rx="46" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="840" y="150" width="520" height="900" rx="46" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+
+  <text x="260" y="215" fill="rgba(255,255,255,0.60)" font-size="12" letter-spacing="2.2" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    MOBILE ENQUIRY
+  </text>
+  <text x="260" y="265" fill="rgba(255,255,255,0.92)" font-size="26" font-weight="700" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Fewer steps. Faster leads.
+  </text>
+
+  <!-- Phone 1 -->
+  <rect x="250" y="290" width="460" height="720" rx="34" fill="rgba(0,0,0,0.25)"/>
+  <rect x="270" y="310" width="420" height="210" rx="24" fill="url(#accent)" opacity="0.18" stroke="rgba(255,255,255,0.10)"/>
+  <text x="290" y="370" fill="rgba(255,255,255,0.92)" font-size="18" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Book a viewing
+  </text>
+  <text x="290" y="398" fill="rgba(255,255,255,0.62)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    30 seconds · No account needed
+  </text>
+  <rect x="290" y="550" width="380" height="44" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="310" y="578" fill="rgba(255,255,255,0.45)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Name
+  </text>
+  <rect x="290" y="604" width="380" height="44" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="310" y="632" fill="rgba(255,255,255,0.45)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Email / phone
+  </text>
+  <rect x="290" y="658" width="180" height="44" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="490" y="658" width="180" height="44" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="310" y="686" fill="rgba(255,255,255,0.45)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Date
+  </text>
+  <text x="510" y="686" fill="rgba(255,255,255,0.45)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Time
+  </text>
+  <rect x="290" y="730" width="380" height="52" rx="20" fill="rgba(34,211,238,0.18)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="335" y="763" fill="rgba(255,255,255,0.88)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Send enquiry →
+  </text>
+  <text x="290" y="820" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Instant confirmation + agent response window
+  </text>
+
+  <!-- Phone 2 -->
+  <rect x="870" y="290" width="460" height="720" rx="34" fill="rgba(0,0,0,0.25)"/>
+  <rect x="890" y="310" width="420" height="160" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="910" y="360" fill="rgba(255,255,255,0.86)" font-size="16" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Thanks — booked.
+  </text>
+  <text x="910" y="388" fill="rgba(255,255,255,0.58)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    We’ll text you the details + directions.
+  </text>
+  <rect x="890" y="490" width="420" height="220" rx="24" fill="url(#accent)" opacity="0.12" stroke="rgba(255,255,255,0.10)"/>
+  <text x="910" y="540" fill="rgba(255,255,255,0.70)" font-size="12" letter-spacing="2.0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    NEXT STEPS
+  </text>
+  <rect x="910" y="565" width="360" height="10" rx="5" fill="rgba(255,255,255,0.10)"/>
+  <rect x="910" y="585" width="320" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+  <rect x="910" y="605" width="340" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+
+  <rect x="890" y="740" width="420" height="92" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="910" y="780" fill="rgba(255,255,255,0.86)" font-size="14" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Agent
+  </text>
+  <text x="910" y="804" fill="rgba(255,255,255,0.58)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    “Reply with questions anytime.”
+  </text>
 </svg>
 

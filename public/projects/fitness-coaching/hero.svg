@@ -1,41 +1,111 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="250" y1="50" x2="1350" y2="900" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="240" y1="60" x2="1360" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07090F"/>
+      <stop offset="1" stop-color="#0A0B14"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="120" x2="1340" y2="780" gradientUnits="userSpaceOnUse">
       <stop stop-color="#60A5FA"/>
       <stop offset="1" stop-color="#A78BFA"/>
     </linearGradient>
-    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1130 220) rotate(135) scale(620 520)">
-      <stop stop-color="#ffffff" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="b" x="-40" y="-40" width="1680" height="980" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="24"/>
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="rgba(255,255,255,0.12)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+    <filter id="shadow" x="-40" y="-40" width="1680" height="980" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
     </filter>
   </defs>
 
-  <rect width="1600" height="900" rx="44" fill="#07090F"/>
-  <g opacity="0.95">
-    <path d="M210 650C420 470 520 470 760 610C1000 750 1170 710 1410 520" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
-    <path d="M190 710C430 520 560 540 770 670C980 800 1180 770 1430 560" stroke="url(#g)" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  <rect width="1600" height="900" rx="44" fill="url(#bg)"/>
+  <g filter="url(#shadow)" opacity="0.9">
+    <circle cx="480" cy="250" r="210" fill="url(#accent)" opacity="0.22"/>
+    <circle cx="1220" cy="590" r="260" fill="url(#accent)" opacity="0.18"/>
   </g>
 
-  <g filter="url(#b)" opacity="0.9">
-    <circle cx="410" cy="310" r="170" fill="url(#g)" opacity="0.52"/>
-    <circle cx="1180" cy="530" r="220" fill="url(#g)" opacity="0.30"/>
-  </g>
+  <!-- Browser frame -->
+  <rect x="200" y="120" width="1200" height="660" rx="26" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="232" y="152" width="250" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+  <rect x="232" y="180" width="420" height="10" rx="5" fill="rgba(255,255,255,0.07)"/>
 
-  <rect x="240" y="160" width="1120" height="640" rx="22" fill="#0B1020" stroke="rgba(255,255,255,0.10)"/>
-  <rect x="280" y="210" width="520" height="18" rx="9" fill="rgba(255,255,255,0.14)"/>
-  <rect x="280" y="250" width="360" height="12" rx="6" fill="rgba(255,255,255,0.10)"/>
+  <!-- Top nav -->
+  <text x="250" y="230" fill="rgba(255,255,255,0.90)" font-size="18" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Pulse Coaching
+  </text>
+  <text x="1090" y="230" fill="rgba(255,255,255,0.55)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Programs   Results   About   FAQ
+  </text>
+  <rect x="1250" y="210" width="130" height="34" rx="17" fill="rgba(96,165,250,0.18)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1269" y="233" fill="rgba(255,255,255,0.86)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Apply now →
+  </text>
 
-  <rect x="280" y="310" width="1040" height="350" rx="18" fill="url(#g)" opacity="0.18"/>
-  <rect x="310" y="340" width="420" height="220" rx="16" fill="rgba(255,255,255,0.10)"/>
-  <rect x="760" y="340" width="530" height="48" rx="14" fill="rgba(255,255,255,0.10)"/>
-  <rect x="760" y="406" width="430" height="48" rx="14" fill="rgba(255,255,255,0.08)"/>
-  <rect x="760" y="472" width="310" height="48" rx="14" fill="rgba(255,255,255,0.06)"/>
+  <!-- Hero content -->
+  <text x="250" y="285" fill="rgba(255,255,255,0.60)" font-size="12" letter-spacing="2.2" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    FITNESS COACHING · WEB DESIGN + DEV
+  </text>
+  <text x="250" y="340" fill="rgba(255,255,255,0.92)" font-size="42" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Stronger, leaner —
+  </text>
+  <text x="250" y="388" fill="rgba(255,255,255,0.92)" font-size="42" font-weight="650" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    with a plan that fits.
+  </text>
+  <text x="250" y="425" fill="rgba(255,255,255,0.62)" font-size="16" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Clear programs, proof up front, and a fast intake → booking flow.
+  </text>
 
-  <rect x="280" y="690" width="220" height="46" rx="23" fill="rgba(255,255,255,0.12)"/>
-  <rect x="520" y="690" width="260" height="46" rx="23" fill="rgba(96,165,250,0.22)"/>
-  <rect x="0" y="0" width="1600" height="900" rx="44" fill="url(#r)"/>
+  <!-- CTA row -->
+  <rect x="250" y="455" width="170" height="46" rx="18" fill="rgba(96,165,250,0.18)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="285" y="485" fill="rgba(255,255,255,0.88)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Start intake
+  </text>
+  <rect x="432" y="455" width="170" height="46" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="470" y="485" fill="rgba(255,255,255,0.70)" font-size="13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    View programs
+  </text>
+
+  <!-- Program cards -->
+  <rect x="250" y="535" width="360" height="215" rx="20" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="270" y="555" width="320" height="88" rx="16" fill="url(#photo)"/>
+  <text x="270" y="670" fill="rgba(255,255,255,0.86)" font-size="14" font-weight="600" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    12‑Week Transformation
+  </text>
+  <text x="270" y="692" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Training plan · Nutrition · Check-ins
+  </text>
+  <rect x="270" y="708" width="120" height="28" rx="12" fill="rgba(96,165,250,0.16)"/>
+  <text x="285" y="727" fill="rgba(255,255,255,0.80)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Best seller
+  </text>
+
+  <rect x="630" y="535" width="360" height="215" rx="20" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <rect x="650" y="555" width="320" height="88" rx="16" fill="url(#photo)"/>
+  <text x="650" y="670" fill="rgba(255,255,255,0.86)" font-size="14" font-weight="600" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Strength & Performance
+  </text>
+  <text x="650" y="692" fill="rgba(255,255,255,0.55)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Progressive overload · Mobility · Metrics
+  </text>
+
+  <!-- Social proof -->
+  <rect x="1010" y="535" width="370" height="215" rx="20" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+  <text x="1030" y="570" fill="rgba(255,255,255,0.60)" font-size="12" letter-spacing="2.0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    RESULTS
+  </text>
+  <text x="1030" y="610" fill="rgba(255,255,255,0.88)" font-size="30" font-weight="700" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    −8.4 kg
+  </text>
+  <text x="1125" y="610" fill="rgba(255,255,255,0.55)" font-size="14" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    in 10 weeks
+  </text>
+  <text x="1030" y="642" fill="rgba(255,255,255,0.62)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    “Clear plan, fast feedback, insane energy.”
+  </text>
+  <rect x="1030" y="662" width="320" height="10" rx="5" fill="rgba(255,255,255,0.10)"/>
+  <rect x="1030" y="682" width="260" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+  <rect x="1030" y="708" width="160" height="30" rx="14" fill="rgba(167,139,250,0.14)"/>
+  <text x="1045" y="728" fill="rgba(255,255,255,0.78)" font-size="12" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto">
+    Read stories →
+  </text>
 </svg>
 
